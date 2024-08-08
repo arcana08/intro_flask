@@ -15,4 +15,4 @@ def contacto2():
     return render_template('contacto.html')
 
 if __name__=='__main__':
-    app.return(debug=True)
+    app.run(debug=True)
