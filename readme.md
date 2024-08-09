@@ -16,3 +16,9 @@ pip install Flask
 # mostrar paquetes instalados
 pip freeze
 pip freeze > paquetes.txt
+
+# actualizar cambios del git
+git pull origin main
+
+# cambiar rama
+git checkout -b (nombre de rama)
