@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 </head>
 <body>
+    <h3>hola</h3>
+    <label for="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui quod ipsam ab, quos sapiente necessitatibus fugit culpa, veritatis soluta suscipit?</label>
+
+    <div class="row" style="display: flex; justify-content: center; align-items: center;">
+
+        <div class="car col-md-5" >
+            <div class="card-header" style="background-color: blue;">INFORMACION DEL CLIENTE</div>
+            <div>
+                <div>    
+                    <label for="txt_nombre1">Nombres</label>
+                </div>
+                <div>    
+                    <input type="text" id="txt_nombre" placeholder="Favor de completar">
+                </div>
+            </div>
+            <div>
+                <div>    
+                    <label for="txt_nombre1">Email</label>
+                </div>
+                <div>    
+                    <input type="text" id="txt_mail" placeholder="Favor de completar">
+                </div>
+            </div>
+            <div>
+                <div>    
+                    <label for="txt_nombre1">N° de telefono</label>
+                </div>
+                <div>    
+                    <input type="text" id="txt_tel" placeholder="Favor de completar">
+                </div>
+            </div>
+            <div>
+                <div>    
+                    <label for="txt_nombre1">Direccion</label>
+                </div>
+                <div>     
+                    <input type="text" id="txt_direccion" placeholder="Favor de completar">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    <button type="button" class="btn btn-primary" id="enviar">ENVIAR</button>
     
+
+
+
+    <script src="{{ url_for('static', filename='js/jquery.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
