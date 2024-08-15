@@ -22,3 +22,6 @@ git pull origin main
 
 # cambiar rama
 git checkout -b (nombre de rama)
+
+# instalar psycopg2
+pip install psycopg2-binary
