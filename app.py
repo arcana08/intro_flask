@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from dao import CiudadDao
 
 app = Flask(__name__)
 
@@ -14,6 +15,10 @@ def contacto():
 def contacto2():
     return render_template('contacto.html')
 
+@app.route('/ciudades')
+def ciudades():
+    return render_template('ciudades.html')
+
 @app.route('/guardar-cliente',methods=['POST'])
 def guardarCliente():
     print(request.form)
@@ -26,6 +31,16 @@ def guardarCliente():
             <p><strong>Email:</strong> {mailcliente}</p>
             <p><strong>Teléfono:</strong> {telefonocliente}</p>
             <p><strong>Dirección:</strong> {direccioncliente}</p>"""
+            
+@app.route('/guardar-ciudad',methods=['POST'])
+def guardarCiudad():
+    ciudad=request.form.get('ciudad')
+    pais=request.form.get('pais')
+    #if ciudad != None and len(ciudad) > 0:
+    #    return redirect(url_for('ciudades'))
+    
+    return f"{request.form.get('ciudad')}"
+    
 
 if __name__=='__main__':
     app.run(debug=True)

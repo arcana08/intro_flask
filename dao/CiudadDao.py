@@ -9,10 +9,33 @@ class CiudadDao:
         """
         conexion = Conexion()
         con= conexion.getConexion()
+        cur = con.cursor
         try:
-            pass
-        except:
-            pass
+            cur.execute(ciudadSQL)
+            lista_ciudades = cur.fetchall()
+            return lista_ciudades
+        except con.Error as e :
+            print(e)
         finally:
-            pass
-        
+            cur.close()
+            con.close()
+            
+    def guardarCiudad(self,ciudad,pais):
+        insertCiudadSQL = """
+        insert into ciudades (ciu_nombre,id_paises) values(%s,%s)
+        """
+        conexion= Conexion()
+        con = conexion.getConexion()
+        cur = con.cursor()
+        try:
+            cur.execute(insertCiudadSQL, (ciudad,pais))
+            con.commit()
+            return True
+        except con.Error as e :
+            print(e)
+            
+        finally:
+            cur.close()
+            con.close()
+            
+        return False
