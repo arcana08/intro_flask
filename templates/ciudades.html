@@ -10,9 +10,8 @@
 </head>
 
 <body>
-    <h3>hola</h3>
-    <label for="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui quod ipsam ab, quos sapiente
-        necessitatibus fugit culpa, veritatis soluta suscipit?</label>
+    <h3>REGISTRO DE CIUDADES</h3>
+
 
     <div class="row" style="display: flex; justify-content: center; align-items: center;">
         <div class="col-md-5">
@@ -23,17 +22,20 @@
                         <label for="ciudad">Ciudad</label>
                     </div>
                     <div>
-                        <input type="text" id="txt_ciudad" name="ciudad" placeholder="Favor de completar">
+                        <input type="text" id="txt_ciudad" name="txt_ciudad" placeholder="Favor de completar">
                     </div>
+                    {# Esta bloque busca el mensaje de error #}
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        <strong>Mensaje al usuario!</strong> {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
                 </div>
-                <div>
-                    <div>
-                        <label for="txt_pais">Pais</label>
-                    </div>
-                    <div>
-                        <input type="text" id="txt_pais" name="pais" placeholder="Favor de completar">
-                    </div>
-                </div>
+
                 <button type="submit" class="btn btn-primary" id="enviar">ENVIAR</button>
             </form>
         </div>
